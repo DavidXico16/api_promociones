@@ -16,28 +16,29 @@ import lombok.Setter;
 @Entity
 @Setter
 @Getter
-@Table(name = "promociones_TTP")
+@Table(name = "PROMOCIONES_TTP") // en mayúsculas
 public class PromocionesTTP {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)  // porque usaste IDENTITY en Oracle
-    @Column(name = "id_promociones_TTP")
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // porque usaste IDENTITY
+    @Column(name = "ID_PROMOCIONES_TTP")
     private Long id;
 
-    @Column(name = "identificador_usuario", nullable = false, length = 36)
+    @Column(name = "IDENTIFICADOR_USUARIO", nullable = false, length = 36)
     private String identificadorUsuario;
 
-    @Column(name = "tipo_solicitud", nullable = false, length = 39)
+    @Column(name = "TIPO_SOLICITUD", nullable = false, length = 39)
     private String tipoSolicitud;
 
-    @Column(name = "fecha_creacion")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date fechaCreacion;
-
-    @Column(name = "area_creacion", nullable = false, length = 39)
-    private String areaCreacion;
-
-    @Column(name = "responsable_creacion", nullable = false, length = 39)
+    @Column(name = "RESPONSABLE_CREACION", nullable = false, length = 39)
     private String responsableCreacion;
     
+    @Column(name = "AREA_CREACION", nullable = false, length = 39)
+    private String areaCreacion;
+
+    @Column(name = "FECHA_CREACION")
+    private String fechaCreacion;
+
+    @Column(name = "ESTATUS", nullable = false)
+    private String estatus; // NUMBER(38) mejor mapear a Long
 }
